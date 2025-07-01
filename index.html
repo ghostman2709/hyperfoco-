@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Livro Hyper Foco | Érico Mendieta</title>
+  <title>Hiperfoco – Acesso Gratuito</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -14,145 +14,144 @@
       text-align: center;
       min-height: 100vh;
       padding: 40px 20px;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     h1 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       color: #66ccff;
-      text-shadow: 0 0 8px #3399ff;
+      text-shadow: 0 0 10px #3399ff;
     }
 
-    p.desc {
-      font-size: 16px;
-      margin-bottom: 30px;
-      color: #aaccee;
+    .link {
+      display: block;
+      background: rgba(102, 204, 255, 0.1);
+      color: #66ccff;
+      padding: 14px 20px;
+      margin: 15px 0;
+      text-decoration: none;
+      border: 2px solid #66ccff;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 18px;
+      backdrop-filter: blur(5px);
     }
 
-    .btn, .btn-copy {
-      margin: 10px auto;
-      padding: 14px 30px;
-      font-size: 16px;
-      font-weight: bold;
+    .link:hover {
+      background: #66ccff;
       color: #001122;
-      background-color: #66ccff;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn:hover, .btn-copy:hover {
-      background-color: #3399ff;
       transform: scale(1.05);
     }
 
-    .capitulo {
-      margin: 20px auto;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.02);
-      border-left: 3px solid #66ccff;
+    .pix-section {
+      margin-top: 60px;
+      padding: 20px;
+      background: rgba(102, 204, 255, 0.15);
       border-radius: 12px;
-      max-width: 650px;
-      text-align: left;
+      box-shadow: 0 0 10px #3399ff;
     }
 
-    .capitulo a {
-      text-decoration: none;
-      color: #aaddff;
+    .pix-key {
       font-weight: bold;
+      color: #99ccff;
+      margin-top: 15px;
+      word-break: break-all;
     }
 
-    .capitulo a:hover {
-      text-decoration: underline;
-      color: #ffffff;
+    .pix-qr {
+      margin: 20px 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #66ccff;
     }
 
-    .pix-code {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 10px;
-      margin: 20px auto;
-      color: #ccf;
-      word-break: break-word;
-      font-size: 14px;
-      max-width: 500px;
-    }
-
-    #msgPix {
+    #msgCopiado {
+      margin-top: 15px;
+      color: #00ff88;
+      font-weight: 700;
       display: none;
-      font-size: 14px;
-      margin-top: 20px;
-      color: #aaffaa;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
     }
 
-    #btnWhatsapp {
+    #btnEnviarComprovante {
+      margin-top: 25px;
       display: none;
-      margin-top: 10px;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
+      background-color: #25d366;
+      color: #fff;
+      padding: 14px 30px;
+      font-weight: 700;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 0 10px #25d366;
+      transition: background-color 0.3s ease;
     }
 
-    #btnWhatsapp.show {
-      display: inline-block;
-      opacity: 1;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.85rem;
-      color: #88aabb;
+    #btnEnviarComprovante:hover {
+      background-color: #1ebe57;
     }
   </style>
 </head>
 <body>
-  <h1>📘 Livro Hyper Foco – O Poder de 10 Minutos por Dia</h1>
-  <p class="desc">Veja abaixo os 10 primeiros capítulos gratuitamente:</p>
+  <div class="container">
+    <h1>📘 Hiperfoco – 10 Capítulos Grátis</h1>
 
-  <!-- Capítulos com links -->
-  <div class="capitulo"><a href="capitulo1.html">Capítulo 1 – O Desejo é o Ponto de Partida</a></div>
-  <div class="capitulo"><a href="capitulo2.html">Capítulo 2 – O Poder da Autosugestão</a></div>
-  <div class="capitulo"><a href="capitulo3.html">Capítulo 3 – Fé: A Ligação Invisível com o Invisível</a></div>
-  <div class="capitulo"><a href="capitulo4.html">Capítulo 4 – Lei da Atração e Frequência Mental</a></div>
-  <div class="capitulo"><a href="capitulo5.html">Capítulo 5 – A Mente Mestra: Você Não Chegará Lá Sozinho</a></div>
-  <div class="capitulo"><a href="capitulo6.html">Capítulo 6 – A Emoção é a Força do Pensamento</a></div>
-  <div class="capitulo"><a href="capitulo7.html">Capítulo 7 – Ação Massiva com Direção Clara</a></div>
-  <div class="capitulo"><a href="capitulo8.html">Capítulo 8 – Persistência: A Chave Que Abre Portas Invisíveis</a></div>
-  <div class="capitulo"><a href="capitulo9.html">Capítulo 9 – Controle do Tempo e do Ambiente Mental</a></div>
-  <div class="capitulo"><a href="capitulo10.html">Capítulo 10 – Dominando o Medo, o Inimigo Interno</a></div>
+    <!-- Capítulos 1 a 10 com links reais -->
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank">Capítulo 4</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank">Capítulo 5</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-6/" target="_blank">Capítulo 6</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-7/" target="_blank">Capítulo 7</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-8/" target="_blank">Capítulo 8</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-9/" target="_blank">Capítulo 9</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank">Capítulo 10</a>
 
-  <!-- Mensagem de liberação dos demais capítulos -->
-  <p class="desc"><strong>🔓 Para liberar os 10 capítulos restantes, realize o pagamento via Pix:</strong></p>
+    <div class="pix-section">
+      <h2>🔓 Liberar os 10 capítulos restantes</h2>
+      <p>Realize o pagamento via Pix para liberar os capítulos 11 a 20:</p>
 
-  <!-- Pagamento Pix -->
-  <img src="qrcode-pix-erico.png" alt="QR Code Pix" style="max-width:200px; margin: 10px auto; display:block;" />
-  <div class="pix-code" id="pixCode">
+      <!-- QR code (você pode usar um arquivo local "qrcode-pix-erico.png" também) -->
+      <img class="pix-qr" src="qrcode-pix-erico.png" alt="QR Code Pix" />
+
+      <button onclick="copiarPix()" class="audio-button">📋 Copiar chave Pix</button>
+
+      <p class="pix-key" id="pixPayload">
 00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a5204000053039865406297.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510ZtHfjL2epp63042748
+      </p>
+
+      <p id="msgCopiado">✅ Pix copiado! Agora envie o comprovante abaixo:</p>
+      <button id="btnEnviarComprovante">📤 Enviar comprovante via WhatsApp</button>
+    </div>
   </div>
-
-  <button class="btn-copy" onclick="copiarPix()">📋 Copiar Código Pix</button>
-
-  <p id="msgPix">✅ Pix copiado! Envie seu comprovante no WhatsApp:</p>
-  <a class="btn" id="btnWhatsapp" href="https://wa.me/5555996043937?text=Olá,%20já%20paguei%20o%20livro%20Hyper%20Foco%20e%20segue%20o%20comprovante." target="_blank">📤 Enviar Comprovante</a>
-
-  <footer>
-    © 2025 Livro Hyper Foco – Criado por Érico Mendieta
-  </footer>
 
   <script>
     function copiarPix() {
-      const pixCode = document.getElementById('pixCode').textContent.trim();
-      navigator.clipboard.writeText(pixCode).then(() => {
-        const msgPix = document.getElementById("msgPix");
-        const btnZap = document.getElementById("btnWhatsapp");
-        msgPix.style.display = "block";
-        setTimeout(() => msgPix.style.opacity = 1, 50);
-        btnZap.classList.add("show");
-      }).catch(err => {
-        console.error("Erro ao copiar Pix:", err);
+      const payload = document.getElementById("pixPayload").innerText;
+      navigator.clipboard.writeText(payload).then(() => {
+        document.getElementById("msgCopiado").style.display = "block";
+        const btn = document.getElementById("btnEnviarComprovante");
+        btn.style.display = "inline-block";
+
+        const telefone = "5555996043937";
+        const texto = encodeURIComponent("Olá! Já realizei o pagamento via Pix. Segue o comprovante.");
+        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
+      }).catch(() => {
+        alert("Erro ao copiar a chave Pix.");
       });
     }
   </script>
