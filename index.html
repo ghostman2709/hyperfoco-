@@ -58,11 +58,38 @@
       color: #000;
       transform: scale(1.05);
     }
+
+    audio {
+      display: none;
+    }
+
+    .audio-button {
+      margin-bottom: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      background-color: #99ffcc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .audio-button:hover {
+      background-color: #00ffcc;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Hiperfoco – Capítulos</h1>
+
+    <button class="audio-button" onclick="playAudio()">Ativar Áudio Ambiente</button>
+    <audio id="audio" loop>
+      <source src="https://cdn.pixabay.com/audio/2023/03/31/audio_8f9c682a75.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
 
     <a class="link" href="https://ghostman2709.github.io/Index/" target="_blank">Capítulo 1</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
@@ -75,5 +102,12 @@
     <a class="link" href="https://ghostman2709.github.io/Capitulo-9/" target="_blank">Capítulo 9</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank">Capítulo 10</a>
   </div>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById("audio");
+      audio.play();
+    }
+  </script>
 </body>
 </html>
