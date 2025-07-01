@@ -14,26 +14,26 @@
       text-align: center;
       min-height: 100vh;
       padding: 40px 20px;
-      opacity: 0;
-      transform: scale(0.95);
       animation: fadeIn 3s ease-in-out forwards;
     }
+
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
+
     .container {
       max-width: 500px;
       margin: 0 auto;
     }
+
     h1 {
       font-size: 32px;
       margin-bottom: 20px;
       color: #66ccff;
       text-shadow: 0 0 10px #3399ff;
     }
+
     .link {
       display: block;
       background: rgba(102, 204, 255, 0.1);
@@ -48,14 +48,13 @@
       font-size: 18px;
       backdrop-filter: blur(5px);
     }
+
     .link:hover {
       background: #66ccff;
       color: #001122;
       transform: scale(1.05);
     }
-    audio {
-      display: none;
-    }
+
     .audio-button {
       margin-bottom: 30px;
       padding: 10px 20px;
@@ -68,9 +67,11 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     .audio-button:hover {
       background-color: #3399ff;
     }
+
     .pix-section {
       margin-top: 60px;
       padding: 20px;
@@ -78,23 +79,18 @@
       border-radius: 12px;
       box-shadow: 0 0 10px #3399ff;
     }
-    .pix-section h2 {
-      color: #66ccff;
-      margin-bottom: 10px;
-    }
-    .pix-section p {
-      color: #cce6ff;
-      margin-bottom: 15px;
-    }
+
     .pix-key {
       font-weight: bold;
       color: #99ccff;
       margin-top: 15px;
+      word-break: break-all;
     }
+
     .pix-qr {
       margin: 20px 0;
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       border-radius: 12px;
       box-shadow: 0 0 8px #66ccff;
     }
@@ -110,7 +106,6 @@
       Seu navegador não suporta áudio HTML5.
     </audio>
 
-    <!-- Lista dos 10 capítulos grátis -->
     <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
@@ -123,28 +118,17 @@
     <a class="link" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank">Capítulo 10</a>
   </div>
 
-  <!-- Seção Pix para liberar capítulos restantes -->
   <div class="container pix-section">
     <h2>🔓 Liberar os 10 Capítulos Restantes</h2>
-    <p>Faça um Pix de <strong>R$ 25,00</strong> para a chave abaixo e libere o acesso aos capítulos 11 a 20.</p>
-    
-    <!-- QR Code com payload atualizado -->
-    <img class="pix-qr" 
-      src="https://api.qrserver.com/v1/create-qr-code/?data=00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO621405109hmjpsDwO463048AFC&size=200x200" 
+    <p>Faça um Pix de <strong>R$ 25,00</strong> usando o QR Code abaixo:</p>
+    <img class="pix-qr"
+      src="https://api.qrserver.com/v1/create-qr-code/?data=00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510thJ5mtkI0U63046767&size=150x150"
       alt="QR Code Pix" />
 
-    <div>
-      <button onclick="copiarPix()" class="audio-button">📋 Copiar Chave Pix</button>
-    </div>
-
-    <div style="margin-top: 20px;">
-      <a href="https://wa.me/5599999999999?text=Olá,%20enviei%20o%20comprovante%20do%20Pix%20de%20R$25,00%20para%20liberar%20os%20capítulos%2011%20a%2020." 
-         target="_blank" class="link" style="display: inline-block; padding: 10px 20px; border-radius: 8px;">
-         💬 Enviar Comprovante no WhatsApp
-      </a>
-    </div>
-
-    <p class="pix-key">Chave Pix: 03614888070</p>
+    <button onclick="copiarPix()" class="audio-button">📋 Copiar chave Pix</button>
+    <p class="pix-key" id="pixPayload">
+      00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510thJ5mtkI0U63046767
+    </p>
   </div>
 
   <script>
@@ -154,11 +138,11 @@
     }
 
     function copiarPix() {
-      const chave = "03614888070";
-      navigator.clipboard.writeText(chave).then(function() {
+      const payload = document.getElementById("pixPayload").innerText;
+      navigator.clipboard.writeText(payload).then(() => {
         alert("Chave Pix copiada com sucesso!");
-      }, function(err) {
-        alert("Erro ao copiar chave Pix.");
+      }).catch(() => {
+        alert("Erro ao copiar a chave.");
       });
     }
   </script>
