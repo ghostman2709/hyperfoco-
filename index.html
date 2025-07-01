@@ -95,7 +95,6 @@
       box-shadow: 0 0 8px #66ccff;
     }
 
-    /* Mensagem de cópia */
     #msgCopiado {
       margin-top: 15px;
       color: #00ff88;
@@ -103,7 +102,6 @@
       display: none;
     }
 
-    /* Botão enviar comprovante WhatsApp (inicialmente oculto) */
     #btnEnviarComprovante {
       margin-top: 25px;
       display: none;
@@ -134,6 +132,7 @@
       Seu navegador não suporta áudio HTML5.
     </audio>
 
+    <!-- 10 capítulos -->
     <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
@@ -144,33 +143,22 @@
     <a class="link" href="https://ghostman2709.github.io/Capitulo-8/" target="_blank">Capítulo 8</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-9/" target="_blank">Capítulo 9</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank">Capítulo 10</a>
-
-    <!-- Link novo para enviar comprovante -->
-    <a
-      class="link"
-      href="https://wa.me/5555996043937?text=Olá,%20segue%20meu%20comprovante%20do%20Pix%20para%20acesso%20ao%20restante%20do%20conteúdo."
-      target="_blank"
-    >
-      📩 Enviar Comprovante
-    </a>
   </div>
 
   <div class="container pix-section">
-    <h2>🔓 Liberar os 10 Capítulos Restantes</h2>
+    <h2>🔓 Liberar os 20 Capítulos Completos</h2>
     <p>Faça um Pix de <strong>R$ 25,00</strong> usando o QR Code abaixo:</p>
-    <img
-      class="pix-qr"
+    <img class="pix-qr"
       src="https://api.qrserver.com/v1/create-qr-code/?data=00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510thJ5mtkI0U63046767&size=150x150"
-      alt="QR Code Pix"
-    />
+      alt="QR Code Pix" />
 
     <button onclick="copiarPix()" class="audio-button">📋 Copiar chave Pix</button>
     <p class="pix-key" id="pixPayload">
       00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510thJ5mtkI0U63046767
     </p>
 
-    <p id="msgCopiado">✅ Copiado com sucesso! Faça o pagamento e envie o comprovante abaixo.</p>
-    <button id="btnEnviarComprovante">📤 Enviar comprovante via WhatsApp</button>
+    <p id="msgCopiado">✅ Chave copiada! Agora envie o comprovante no WhatsApp:</p>
+    <button id="btnEnviarComprovante">📤 Enviar comprovante</button>
   </div>
 
   <script>
@@ -181,26 +169,17 @@
 
     function copiarPix() {
       const payload = document.getElementById("pixPayload").innerText;
-      navigator.clipboard
-        .writeText(payload)
-        .then(() => {
-          const msg = document.getElementById("msgCopiado");
-          msg.style.display = "block";
+      navigator.clipboard.writeText(payload).then(() => {
+        document.getElementById("msgCopiado").style.display = "block";
+        const btn = document.getElementById("btnEnviarComprovante");
+        btn.style.display = "inline-block";
 
-          const btn = document.getElementById("btnEnviarComprovante");
-          btn.style.display = "inline-block";
-
-          // Altere aqui para seu número com DDI + DDD
-          const telefone = "5555996043937";
-          const texto = encodeURIComponent(
-            "Olá! Já realizei o pagamento via Pix. Segue o comprovante em anexo."
-          );
-          const link = `https://wa.me/${telefone}?text=${texto}`;
-          btn.onclick = () => window.open(link, "_blank");
-        })
-        .catch(() => {
-          alert("Erro ao copiar a chave.");
-        });
+        const telefone = "5555996043937";
+        const texto = encodeURIComponent("Olá! Já realizei o pagamento via Pix. Segue o comprovante.");
+        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
+      }).catch(() => {
+        alert("Erro ao copiar a chave.");
+      });
     }
   </script>
 </body>
