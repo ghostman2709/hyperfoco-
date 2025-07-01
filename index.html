@@ -55,6 +55,9 @@
       background: rgba(255, 255, 255, 0.02);
       border-left: 3px solid #66ccff;
       border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .modulo h3 {
@@ -147,6 +150,7 @@
       <li>Criação com IA: imagem, vídeo, música</li>
       <li>Modo Mestre Hyper Foco</li>
     </ul>
+  </div>
   
   <div class="modulo">
     <h3>Módulo 11 – Criação de Vídeos com Pessoas Reais + Instagram de Cortes</h3>
@@ -159,7 +163,6 @@
   </div>
 
   <p class="desc">Realize o pagamento via Pix Copia e Cola:</p>
-
 
   <img src="qrcode-pix-erico.png" alt="QR Code Pix" style="max-width:200px; margin: 10px auto; display:block;" />
   <div class="pix-code" id="pixCode">
@@ -201,11 +204,12 @@
     function copiarPix() {
       const pixCode = document.getElementById('pixCode').textContent.trim();
       navigator.clipboard.writeText(pixCode).then(() => {
-        alert('Código Pix copiado com sucesso!'); document.getElementById("btnWhatsapp").style.display = "inline-block";
+        alert('Código Pix copiado com sucesso!');
+        document.getElementById("btnWhatsapp").style.display = "inline-block";
       }).catch(err => {
         alert('Erro ao copiar código Pix.');
       });
     }
   </script>
 </body>
-</html>
+        </html>
