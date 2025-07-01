@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mestre em Inteligência Artificial | Hyperfoco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #001122, #002244);
+      color: #66ccff;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #66ccff;
+      text-shadow: 0 0 8px #3399ff;
+    }
+
+    p.desc {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #aaccee;
+    }
+
+    .btn, .btn-copy {
+      margin: 10px auto;
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #001122;
+      background-color: #66ccff;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover, .btn-copy:hover {
+      background-color: #3399ff;
+      transform: scale(1.05);
+    }
+
+    .modulo {
+      margin: 30px 0;
+      text-align: left;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid #66ccff;
+      border-radius: 12px;
+    }
+
+    .modulo h3 {
+      color: #88ddff;
+      margin-bottom: 10px;
+    }
+
+    .modulo ul {
+      list-style: none;
+      padding: 0;
+      color: #aaccee;
+    }
+
+    .modulo ul li {
+      margin-bottom: 6px;
+    }
+
+    .pix-code {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px;
+      margin: 20px auto;
+      color: #ccf;
+      word-break: break-word;
+      font-size: 14px;
+      max-width: 500px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #88aabb;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 Curso Mestre em Inteligência Artificial</h1>
+  <p class="desc">Domine a IA com foco total e ferramentas práticas que mudarão sua vida.</p>
+
+  <button class="btn" id="btnAudio">🎧 Ativar Áudio Binaural</button>
+  <audio id="audioBinaural" src="binaural.mp3" loop preload="auto"></audio>
+
+  <div class="modulo">
+    <h3>Módulo 1 – Introdução à Inteligência Artificial</h3>
+    <ul>
+      <li>O que é IA e o que ela vai mudar</li>
+      <li>IA fraca vs IA forte</li>
+      <li>Futuro, ética e impactos sociais</li>
+    </ul>
+  </div>
+
+  <div class="modulo">
+    <h3>Módulo 2 – ChatGPT e Modelos de Linguagem</h3>
+    <ul>
+      <li>Como funcionam os LLMs</li>
+      <li>Prompt engineering</li>
+      <li>ChatGPT para produtividade</li>
+    </ul>
+  </div>
+
+  <div class="modulo">
+    <h3>Módulo 3 – Ferramentas Práticas com IA</h3>
+    <ul>
+      <li>Sites, apps e IA no celular</li>
+      <li>Automatize sua vida digital</li>
+    </ul>
+  </div>
+
+  <div class="modulo">
+    <h3>Módulo 4 – IA para Programação e Automação</h3>
+    <ul>
+      <li>Códigos com IA</li>
+      <li>Bots e scripts práticos</li>
+    </ul>
+  </div>
+
+  <div class="modulo">
+    <h3>Módulo 5 – Monetização com IA</h3>
+    <ul>
+      <li>Criação de produtos digitais</li>
+      <li>Marketing automatizado</li>
+    </ul>
+  </div>
+
+  <div class="modulo">
+    <h3>Módulo 6 a 10</h3>
+    <ul>
+      <li>Produtividade com IA</li>
+      <li>IA e Inteligência Emocional</li>
+      <li>Criação com IA: imagem, vídeo, música</li>
+      <li>Modo Mestre Hyper Foco</li>
+    </ul>
+  
+  <div class="modulo">
+    <h3>Módulo 11 – Criação de Vídeos com Pessoas Reais + Instagram de Cortes</h3>
+    <ul>
+      <li>Ferramentas como HeyGen, Synthesia, Sora</li>
+      <li>Criação de personagens realistas com IA</li>
+      <li>Roteirização para vídeos virais de cortes</li>
+      <li>Como montar um perfil de autoridade no Instagram com IA</li>
+    </ul>
+  </div>
+
+  <p class="desc">Realize o pagamento via Pix Copia e Cola:</p>
+
+
+  <img src="qrcode-pix-erico.png" alt="QR Code Pix" style="max-width:200px; margin: 10px auto; display:block;" />
+  <div class="pix-code" id="pixCode">
+00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a5204000053039865406297.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510ZtHfjL2epp63042748
+  </div>
+
+  <button class="btn-copy" onclick="copiarPix()">📋 Copiar Código Pix</button>
+
+  <p class="desc">Após o pagamento, envie o comprovante clicando abaixo:</p>
+  <a class="btn" id="btnWhatsapp" href="https://wa.me/5555996043937?text=Olá,%20já%20paguei%20o%20Curso%20Mestre%20em%20IA%20e%20segue%20o%20comprovante." target="_blank" style="display:none;">📤 Enviar Comprovante no WhatsApp</a>
+
+  <footer>
+    © 2025 Projeto Hyperfoco – Criado por Érico Mendieta
+  </footer>
+
+  <script>
+    const btnAudio = document.getElementById('btnAudio');
+    const audio = document.getElementById('audioBinaural');
+    let isPlaying = false;
+
+    audio.volume = 1.0;
+
+    btnAudio.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play().then(() => {
+          btnAudio.textContent = '⏸️ Parar Áudio Binaural';
+          isPlaying = true;
+        }).catch(err => {
+          console.error("Erro ao reproduzir o áudio:", err);
+          alert("Erro ao reproduzir áudio. Verifique se o arquivo 'binaural.mp3' está na mesma pasta.");
+        });
+      } else {
+        audio.pause();
+        btnAudio.textContent = '🎧 Ativar Áudio Binaural';
+        isPlaying = false;
+      }
+    });
+
+    function copiarPix() {
+      const pixCode = document.getElementById('pixCode').textContent.trim();
+      navigator.clipboard.writeText(pixCode).then(() => {
+        alert('Código Pix copiado com sucesso!'); document.getElementById("btnWhatsapp").style.display = "inline-block";
+      }).catch(err => {
+        alert('Erro ao copiar código Pix.');
+      });
+    }
+  </script>
+</body>
+</html>
