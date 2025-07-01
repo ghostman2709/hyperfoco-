@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hiperfoco</title>
+  <title>Hiperfoco – Capítulos Grátis</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -18,26 +18,22 @@
       transform: scale(0.95);
       animation: fadeIn 3s ease-in-out forwards;
     }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
         transform: scale(1);
       }
     }
-
     .container {
       max-width: 500px;
       margin: 0 auto;
     }
-
     h1 {
       font-size: 32px;
       margin-bottom: 20px;
       color: #66ccff;
       text-shadow: 0 0 10px #3399ff;
     }
-
     .link {
       display: block;
       background: rgba(102, 204, 255, 0.1);
@@ -52,17 +48,14 @@
       font-size: 18px;
       backdrop-filter: blur(5px);
     }
-
     .link:hover {
       background: #66ccff;
       color: #001122;
       transform: scale(1.05);
     }
-
     audio {
       display: none;
     }
-
     .audio-button {
       margin-bottom: 30px;
       padding: 10px 20px;
@@ -75,15 +68,41 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
     .audio-button:hover {
       background-color: #3399ff;
+    }
+    .pix-section {
+      margin-top: 60px;
+      padding: 20px;
+      background: rgba(102, 204, 255, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 0 10px #3399ff;
+    }
+    .pix-section h2 {
+      color: #66ccff;
+      margin-bottom: 10px;
+    }
+    .pix-section p {
+      color: #cce6ff;
+      margin-bottom: 15px;
+    }
+    .pix-key {
+      font-weight: bold;
+      color: #99ccff;
+      margin-top: 15px;
+    }
+    .pix-qr {
+      margin: 20px 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #66ccff;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Hiperfoco – Capítulos</h1>
+    <h1>Hiperfoco – Capítulos Grátis</h1>
 
     <button class="audio-button" onclick="playAudio()">Ativar Áudio Ambiente</button>
     <audio id="audio" loop>
@@ -91,6 +110,7 @@
       Seu navegador não suporta áudio HTML5.
     </audio>
 
+    <!-- Lista dos 10 capítulos grátis -->
     <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
@@ -103,10 +123,43 @@
     <a class="link" href="https://ghostman2709.github.io/Capitulo-10/" target="_blank">Capítulo 10</a>
   </div>
 
+  <!-- Seção Pix para liberar capítulos restantes -->
+  <div class="container pix-section">
+    <h2>🔓 Liberar os 10 Capítulos Restantes</h2>
+    <p>Faça um Pix de <strong>R$ 25,00</strong> para a chave abaixo e libere o acesso aos capítulos 11 a 20.</p>
+    
+    <!-- QR Code com seu payload estático -->
+    <img class="pix-qr" 
+      src="https://api.qrserver.com/v1/create-qr-code/?data=00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540525.005802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510qOqGWpw13b63046185&size=200x200" 
+      alt="QR Code Pix" />
+
+    <div>
+      <button onclick="copiarPix()" class="audio-button">📋 Copiar Chave Pix</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="https://wa.me/5599999999999?text=Olá,%20enviei%20o%20comprovante%20do%20Pix%20de%20R$25,00%20para%20liberar%20os%20capítulos%2011%20a%2020." 
+         target="_blank" class="link" style="display: inline-block; padding: 10px 20px; border-radius: 8px;">
+         💬 Enviar Comprovante no WhatsApp
+      </a>
+    </div>
+
+    <p class="pix-key">Chave Pix: 03614888070</p>
+  </div>
+
   <script>
     function playAudio() {
       const audio = document.getElementById("audio");
       audio.play();
+    }
+
+    function copiarPix() {
+      const chave = "03614888070";
+      navigator.clipboard.writeText(chave).then(function() {
+        alert("Chave Pix copiada com sucesso!");
+      }, function(err) {
+        alert("Erro ao copiar chave Pix.");
+      });
     }
   </script>
 </body>
