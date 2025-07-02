@@ -90,23 +90,6 @@
       font-weight: 700;
       display: none;
     }
-    #btnEnviarComprovante {
-      margin-top: 25px;
-      display: none;
-      background-color: #25d366;
-      color: #fff;
-      padding: 14px 30px;
-      font-weight: 700;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 0 10px #25d366;
-      transition: background-color 0.3s ease;
-    }
-    #btnEnviarComprovante:hover {
-      background-color: #1ebe57;
-    }
     .section-divider {
       border-top: 2px solid #3399ff;
       margin: 40px 0;
@@ -118,13 +101,13 @@
   <div class="container">
     <h1>📘 Hiperfoco – Capítulos 1 a 5 Grátis</h1>
     <!-- Capítulos 1 a 5 -->
-    <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank">Capítulo 1</a>
-    <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank">Capítulo 2</a>
-    <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank">Capítulo 3</a>
-    <a class="link" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank">Capítulo 4</a>
-    <a class="link" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank">Capítulo 5</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank" rel="noopener noreferrer">Capítulo 4</a>
+    <a class="link" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank" rel="noopener noreferrer">Capítulo 5</a>
 
-    <div class="mensagem-pagamento" style="margin:30px 15px; font-size:18px; font-weight:600; color:#99ccff; text-shadow:0 0 5px #3399ff;">
+    <div style="margin:30px 15px; font-size:18px; font-weight:600; color:#99ccff; text-shadow:0 0 5px #3399ff;">
       Para liberar os capítulos 6 a 20, faça o pagamento abaixo:
     </div>
 
@@ -137,7 +120,7 @@
 00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C
       </p>
       <p id="msgCopiadoEbook" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
-      <button id="btnEnviarComprovanteEbook" style="display:none;">📤 Enviar comprovante via WhatsApp</button>
+      <a id="btnEnviarComprovanteEbook" class="link" style="display:none;" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
     </div>
 
     <div class="section-divider"></div>
@@ -151,7 +134,7 @@
 00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZYGFi1iA26304125D
       </p>
       <p id="msgCopiadoCombo" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
-      <button id="btnEnviarComprovanteCombo" style="display:none;">📤 Enviar comprovante via WhatsApp</button>
+      <a id="btnEnviarComprovanteCombo" class="link" style="display:none;" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
     </div>
 
   </div>
@@ -166,6 +149,11 @@
 
         const telefone = "5555996043937";
         const texto = encodeURIComponent("Olá! Já realizei o pagamento via Pix. Segue o comprovante.");
+
+        btn.href = `https://wa.me/${telefone}?text=${texto}`;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+
         btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
       }).catch(() => {
         alert("Erro ao copiar a chave Pix.");
