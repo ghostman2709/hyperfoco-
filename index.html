@@ -94,10 +94,9 @@
       border-top: 2px solid #3399ff;
       margin: 40px 0;
     }
-    /* Novo estilo verde neon para os botões enviar comprovante */
     .btn-verde {
       display: none;
-      background-color: #39ff14; /* verde neon */
+      background-color: #39ff14;
       color: #001100;
       padding: 14px 30px;
       font-weight: 700;
@@ -122,7 +121,6 @@
 
   <div class="container">
     <h1>📘 Hiperfoco Capítulos 1 a 5 Grátis</h1>
-    <!-- Capítulos 1 a 5 -->
     <a class="link" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
     <a class="link" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
@@ -170,17 +168,24 @@
         btn.style.display = "inline-block";
 
         const telefone = "5555996043937";
-        const texto = encodeURIComponent("Olá! Já realizei o pagamento via Pix. Segue o comprovante.");
 
-        btn.href = `https://wa.me/${telefone}?text=${texto}`;
+        let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
+        if (idBtn === "btnEnviarComprovanteCombo") {
+          texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 24,99.";
+        } else if (idBtn === "btnEnviarComprovanteEbook") {
+          texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 19,99.";
+        }
+
+        const mensagem = encodeURIComponent(texto);
+        btn.href = `https://wa.me/${telefone}?text=${mensagem}`;
         btn.target = "_blank";
         btn.rel = "noopener noreferrer";
 
-        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
+        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
       }).catch(() => {
         alert("Erro ao copiar a chave Pix.");
       });
     }
   </script>
 </body>
-</html>
+  </html>
