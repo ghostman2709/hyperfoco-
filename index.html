@@ -167,6 +167,9 @@
         const btn = document.getElementById(idBtn);
         btn.style.display = "inline-block";
 
+        // Faz scroll suave e centraliza o botão na tela
+        btn.scrollIntoView({ behavior: "smooth", block: "center" });
+
         const telefone = "5555996043937";
 
         let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
@@ -188,4 +191,4 @@
     }
   </script>
 </body>
-  </html>
+</html>
