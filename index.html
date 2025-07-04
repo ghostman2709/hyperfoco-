@@ -16,40 +16,35 @@
       text-align: center;
       min-height: 100vh;
       padding: 40px 20px;
-      animation: fadeIn 2s ease-in-out forwards;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .container {
-      max-width: 740px;
+      max-width: 700px;
       margin: 0 auto 60px auto;
       padding: 30px 20px;
-      border-radius: 16px;
-      background: rgba(0, 18, 34, 0.6);
-      box-shadow: 0 0 30px #66ccff66, 0 0 60px #3399ff55;
+      border-radius: 20px;
+      background: rgba(0, 18, 34, 0.7);
+      box-shadow: 0 0 40px #66ccff99, 0 0 80px #3399ff88;
       position: relative;
       z-index: 1;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h1, h2 {
       color: #66ccff;
-      text-shadow: 0 0 12px #3399ff;
+      text-shadow: 0 0 12px #3399ff, 0 0 25px #66ccffaa;
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 36px;
       margin-bottom: 25px;
       padding-top: 30px;
     }
@@ -73,14 +68,14 @@
       font-weight: 600;
       font-size: 18px;
       backdrop-filter: blur(5px);
-      box-shadow: 0 0 10px #66ccff44;
+      box-shadow: 0 0 12px #66ccff66;
     }
 
     .link:hover {
       background: #66ccff;
       color: #001122;
       transform: scale(1.05);
-      box-shadow: 0 0 20px #66ccffaa;
+      box-shadow: 0 0 25px #66ccffaa;
     }
 
     .pix-section {
@@ -88,12 +83,12 @@
       padding: 20px;
       background: rgba(102, 204, 255, 0.12);
       border-radius: 16px;
-      box-shadow: 0 0 20px #66ccff88, 0 0 50px #3399ff55;
+      box-shadow: 0 0 30px #66ccff88, 0 0 60px #3399ff55;
     }
 
     .pix-key {
       font-weight: bold;
-      color: #99ccff;
+      color: #bbddff;
       margin-top: 15px;
       word-break: break-word;
       font-size: 14px;
@@ -104,7 +99,7 @@
       width: 150px;
       height: 150px;
       border-radius: 12px;
-      box-shadow: 0 0 15px #66ccff;
+      box-shadow: 0 0 20px #66ccff;
       display: block;
     }
 
@@ -134,24 +129,12 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       margin: 15px 30px;
-      display: inline-block;
     }
 
     .btn-verde:hover {
       background-color: #2ecc00;
       color: #fff;
       box-shadow: 0 0 20px #2ecc00;
-    }
-
-    /* Partículas de fundo */
-    #particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: transparent;
     }
   </style>
 </head>
@@ -171,7 +154,6 @@
       Para liberar os capítulos 6 a 20, faça o pagamento abaixo:
     </div>
 
-    <!-- PIX Ebook -->
     <div class="pix-section" id="pixEbook">
       <h2>📗 Ebook Completo Hiperfoco R$19,99</h2>
       <p>Pagamento via Pix para liberar os capítulos 6 a 20.</p>
@@ -179,12 +161,11 @@
       <button onclick="copiarPix('pixPayloadEbook','btnEnviarComprovanteEbook','msgCopiadoEbook')" class="link">📋 Copiar chave Pix</button>
       <p class="pix-key" id="pixPayloadEbook">00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C</p>
       <p id="msgCopiadoEbook" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
-      <a id="btnEnviarComprovanteEbook" class="btn-verde" style="display:none;" target="_blank">📤 Enviar comprovante via WhatsApp</a>
+      <a id="btnEnviarComprovanteEbook" class="btn-verde" target="_blank">📤 Enviar comprovante via WhatsApp</a>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- PIX Combo -->
     <div class="pix-section" id="pixCombo">
       <h2>🔥 Combo Plus: Ebook + Grupo VIP R$24,99</h2>
       <p>Inclui ebook completo + acesso ao grupo VIP com trilhas binaurais e +200 audiobooks.</p>
@@ -192,7 +173,7 @@
       <button onclick="copiarPix('pixPayloadCombo','btnEnviarComprovanteCombo','msgCopiadoCombo')" class="link">📋 Copiar chave Pix</button>
       <p class="pix-key" id="pixPayloadCombo">00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZYGFi1iA26304125D</p>
       <p id="msgCopiadoCombo" style="display:none;">✅ Pix copiado! Agora envie seu comprovante:</p>
-      <a id="btnEnviarComprovanteCombo" class="btn-verde" style="display:none;" target="_blank">📤 Enviar comprovante via WhatsApp</a>
+      <a id="btnEnviarComprovanteCombo" class="btn-verde" target="_blank">📤 Enviar comprovante via WhatsApp</a>
     </div>
   </div>
 
@@ -207,6 +188,7 @@
         btn.scrollIntoView({ behavior: "smooth", block: "center" });
 
         const telefone = "5555996043937";
+
         let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
         if (idBtn === "btnEnviarComprovanteCombo") {
           texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 24,99";
@@ -216,55 +198,73 @@
 
         const mensagem = encodeURIComponent(texto);
         btn.href = `https://wa.me/${telefone}?text=${mensagem}`;
-        btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
-        btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
       }).catch(() => {
         alert("Erro ao copiar a chave Pix.");
       });
     }
 
-    // Partículas animadas
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
+    // Partículas com brilho intenso e mais quantidade
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    function resizeCanvas() {
+    const colors = ["#66ccff", "#3399ff", "#00ccff", "#88eeff"];
+    let particlesArray = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.3) this.size -= 0.01;
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < 150; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.3) {
+          particlesArray[i] = new Particle();
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    for (let i = 0; i < 160; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.6 + 0.4,
-        dx: (Math.random() - 0.5) * 0.6,
-        dy: (Math.random() - 0.5) * 0.6,
-      });
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#66ccff";
-
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-
-      requestAnimationFrame(drawParticles);
-    }
-
-    drawParticles();
+      initParticles();
+    });
   </script>
 </body>
 </html>
