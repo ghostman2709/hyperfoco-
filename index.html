@@ -27,7 +27,7 @@
     }
 
     .container {
-      max-width: 650px;
+      max-width: 740px;
       margin: 0 auto 60px auto;
       padding: 30px 20px;
       border-radius: 16px;
@@ -207,7 +207,6 @@
         btn.scrollIntoView({ behavior: "smooth", block: "center" });
 
         const telefone = "5555996043937";
-
         let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
         if (idBtn === "btnEnviarComprovanteCombo") {
           texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 24,99";
@@ -219,7 +218,6 @@
         btn.href = `https://wa.me/${telefone}?text=${mensagem}`;
         btn.target = "_blank";
         btn.rel = "noopener noreferrer";
-
         btn.onclick = () => window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
       }).catch(() => {
         alert("Erro ao copiar a chave Pix.");
@@ -239,13 +237,13 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 160; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 1.4,
-        dx: (Math.random() - 0.5) * 0.4,
-        dy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 1.6 + 0.4,
+        dx: (Math.random() - 0.5) * 0.6,
+        dy: (Math.random() - 0.5) * 0.6,
       });
     }
 
