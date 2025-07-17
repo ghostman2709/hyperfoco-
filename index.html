@@ -103,58 +103,6 @@
       font-weight: 500;
     }
 
-    .pix-qr {
-      width: 150px;
-      height: 150px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #66ccff;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .pix-key {
-      font-weight: bold;
-      color: #aaccee;
-      margin-top: 15px;
-      font-size: 14px;
-      word-break: break-word;
-      user-select: all;
-      cursor: text;
-      text-align: center;
-    }
-
-    .btn-verde {
-      display: none;
-      background-color: #39ff14;
-      color: #001100;
-      padding: 14px 30px;
-      font-weight: 700;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 0 12px #39ff14, 0 0 25px #39ff14aa;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .btn-verde:hover {
-      background-color: #2ecc00;
-      color: #fff;
-      box-shadow: 0 0 20px #2ecc00;
-    }
-
-    #msgCopiadoEbook, #msgCopiadoCombo {
-      display: none;
-      color: #00ff88;
-      font-weight: 700;
-      margin-top: 15px;
-      text-align: center;
-    }
-
     #audioControl {
       margin: 2rem auto;
       background: rgba(102, 204, 255, 0.1);
@@ -205,12 +153,9 @@
       .section h2 {
         font-size: 1.4rem;
       }
-      .link, .btn-verde, #audioControl {
+      .link, #audioControl {
         font-size: 1rem;
         padding: 0.8rem 1.2rem;
-      }
-      .btn-verde {
-        max-width: 100%;
       }
     }
   </style>
@@ -234,28 +179,22 @@
   <button id="audioControl" class="fade-in">Ativar Trilha Sonora 🎧</button>
   <audio id="bgAudio" src="audio.mp3" loop></audio>
 
+  <!-- Ebook 19,99 -->
   <div class="pix-section fade-in" id="pixEbook">
     <h2>📗 Ebook Completo R$19,99</h2>
-    <p>Pagamento via Pix para liberar capítulos 6 a 20.</p>
-    <img class="pix-qr" src="qrcode-pix-erico.png" alt="QR Code para pagamento Pix do Ebook de R$19,99" />
-    <button onclick="copiarPix('pixPayloadEbook','btnEnviarComprovanteEbook','msgCopiadoEbook')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
-    <p class="pix-key" id="pixPayloadEbook">
-      00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540519.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510Uitd1vwYnc63049A7C
-    </p>
-    <p id="msgCopiadoEbook">✅ Pix copiado! Agora envie seu comprovante:</p>
-    <a id="btnEnviarComprovanteEbook" class="btn-verde" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
+    <p>Acesse os capítulos 6 a 20 com um clique no botão abaixo.</p>
+    <a class="link fade-in" href="https://wa.me/5555996043937?text=%28Ebook%29" target="_blank" rel="noopener noreferrer">
+      🔓 Liberar Capítulos
+    </a>
   </div>
 
+  <!-- Combo 24,99 -->
   <div class="pix-section fade-in" id="pixCombo">
     <h2>🔥 Combo Plus – R$24,99</h2>
     <p>Inclui Ebook completo + Grupo VIP com mais de 200 audiobooks e PDFs.</p>
-    <img class="pix-qr" src="qrcode-pix-comboplus.png" alt="QR Code para pagamento Pix do Combo Plus R$24,99" />
-    <button onclick="copiarPix('pixPayloadCombo','btnEnviarComprovanteCombo','msgCopiadoCombo')" class="link fade-in" type="button">📋 Copiar chave Pix</button>
-    <p class="pix-key" id="pixPayloadCombo">
-      00020126580014BR.GOV.BCB.PIX013692a349bf-d612-46fd-ab30-6532a7397b0a520400005303986540524.995802BR5924Erico Mendieta Rodriguez6009SAO PAULO62140510wZYGFi1iA26304125D
-    </p>
-    <p id="msgCopiadoCombo">✅ Pix copiado! Agora envie seu comprovante:</p>
-    <a id="btnEnviarComprovanteCombo" class="btn-verde" target="_blank" rel="noopener noreferrer">📤 Enviar comprovante via WhatsApp</a>
+    <a class="link fade-in" href="https://wa.me/5555996043937?text=%28Ebook%29" target="_blank" rel="noopener noreferrer">
+      🔓 Liberar Capítulos
+    </a>
   </div>
 </div>
 
@@ -264,7 +203,7 @@
 </footer>
 
 <script>
-  // Controle da trilha sonora
+  // Trilha sonora
   const btnAudio = document.getElementById('audioControl');
   const audio = document.getElementById('bgAudio');
   let isPlaying = false;
@@ -281,35 +220,7 @@
     }
   });
 
-  // Função para copiar Pix e mostrar botão WhatsApp só depois
-  function copiarPix(idPayload, idBtn, idMsg) {
-    const payload = document.getElementById(idPayload).innerText.trim();
-    navigator.clipboard.writeText(payload).then(() => {
-      // Mostrar mensagem "Pix copiado!"
-      document.getElementById(idMsg).style.display = "block";
-
-      // Mostrar botão verde para envio de comprovante
-      const btn = document.getElementById(idBtn);
-      btn.style.display = "inline-block";
-
-      // Rolar suavemente até o botão verde
-      btn.scrollIntoView({ behavior: "smooth", block: "center" });
-
-      // Ajustar link do WhatsApp conforme opção
-      const telefone = "5555996043937";
-      let texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante.";
-      if (idBtn === "btnEnviarComprovanteCombo") {
-        texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 24,99";
-      } else if (idBtn === "btnEnviarComprovanteEbook") {
-        texto = "Olá! Já realizei o pagamento via Pix. Segue o comprovante 19,99";
-      }
-      btn.href = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
-    }).catch(() => {
-      alert("Erro ao copiar a chave Pix.");
-    });
-  }
-
-  // Fade-in com IntersectionObserver para elementos com .fade-in
+  // Fade-in
   const fadeIns = document.querySelectorAll('.fade-in');
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
