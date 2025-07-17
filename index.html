@@ -104,27 +104,29 @@
     }
 
     #audioControl {
-      margin: 2rem auto;
-      background: rgba(102, 204, 255, 0.1);
+      margin: 2rem auto 3rem;
+      background: rgba(102, 204, 255, 0.2);
       border: 2px solid #66ccff;
       color: #66ccff;
-      padding: 0.8rem 1.5rem;
+      padding: 1rem 1.5rem;
       border-radius: 12px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 20px;
       transition: all 0.3s ease;
       backdrop-filter: blur(5px);
       display: block;
-      max-width: 300px;
+      max-width: 320px;
       text-align: center;
       user-select: none;
+      box-shadow: 0 0 15px #66ccffbb;
     }
 
     #audioControl:hover {
       background: #66ccff;
       color: #001122;
       transform: scale(1.05);
+      box-shadow: 0 0 30px #66ccffdd;
     }
 
     footer {
@@ -154,8 +156,12 @@
         font-size: 1.4rem;
       }
       .link, #audioControl {
-        font-size: 1rem;
-        padding: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+        padding: 1rem 1.2rem;
+        max-width: 100%;
+      }
+      #audioControl {
+        margin-bottom: 2rem;
       }
     }
   </style>
@@ -168,16 +174,16 @@
 </header>
 
 <div class="section fade-in">
+  <!-- Trilha sonora no topo -->
+  <button id="audioControl" class="fade-in">🎧 Ative sua Trilha Sonora para fácil ativação</button>
+  <audio id="bgAudio" src="sua-nova-trilha.mp3" loop></audio>
+
   <h2 class="fade-in">📘 Capítulos Gratuitos</h2>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-2/" target="_blank" rel="noopener noreferrer">Capítulo 2</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-3/" target="_blank" rel="noopener noreferrer">Capítulo 3</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-4/" target="_blank" rel="noopener noreferrer">Capítulo 4</a>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-5/" target="_blank" rel="noopener noreferrer">Capítulo 5</a>
-
-  <h2 class="fade-in">🎧 Trilha Sonora de Foco</h2>
-  <button id="audioControl" class="fade-in">Ativar Trilha Sonora 🎧</button>
-  <audio id="bgAudio" src="sua-nova-trilha.mp3" loop></audio>
 
   <!-- Ebook 19,99 -->
   <div class="pix-section fade-in" id="pixEbook">
@@ -215,7 +221,7 @@
       isPlaying = true;
     } else {
       audio.pause();
-      btnAudio.textContent = 'Ativar Trilha Sonora 🎧';
+      btnAudio.textContent = '🎧 Ative sua Trilha Sonora para fácil ativação';
       isPlaying = false;
     }
   });
