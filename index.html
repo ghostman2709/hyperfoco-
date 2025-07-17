@@ -176,7 +176,7 @@
 <div class="section fade-in">
   <!-- Trilha sonora no topo -->
   <button id="audioControl" class="fade-in">🎧 Ative 432hz Binaural!</button>
-  <audio id="bgAudio" src="sua-nova-trilha.mp3" loop></audio>
+  <audio id="bgAudio" src="audio.mp3" loop></audio>
 
   <h2 class="fade-in">📘 Capítulos Gratuitos</h2>
   <a class="link fade-in" href="https://ghostman2709.github.io/Capitulo-1/" target="_blank" rel="noopener noreferrer">Capítulo 1</a>
@@ -217,11 +217,11 @@
   btnAudio.addEventListener('click', () => {
     if (!isPlaying) {
       audio.play();
-      btnAudio.textContent = 'Parar Trilha Sonora ⏸️';
+      btnAudio.textContent = 'Parar ⏸️';
       isPlaying = true;
     } else {
       audio.pause();
-      btnAudio.textContent = '🎧 Ative sua Trilha Sonora para fácil ativação';
+      btnAudio.textContent = '🎧 Ative';
       isPlaying = false;
     }
   });
